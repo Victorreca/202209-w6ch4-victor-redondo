@@ -19,8 +19,12 @@ const serverThings = app.listen(port, () => {
   log(serveListener);
 });
 
-app.get("/", (req, res) => {
+app.get("/things", (req, res) => {
   res.status(200).json(things);
+});
+
+app.use((req, res) => {
+  res.status(200).json({ message: "Huye" });
 });
 
 serverThings.on("error", () => {

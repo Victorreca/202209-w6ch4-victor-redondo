@@ -16,11 +16,11 @@ app.get("/things", (req, res) => {
 });
 
 const serverThings = app.listen(4000, () => {
-  const { log, clear } = console;
+  const { log } = console;
   log(serveListener);
 });
 
 serverThings.on("error", () => {
-  const { log, clear } = console;
+  const { log } = console;
   log(error404);
 });

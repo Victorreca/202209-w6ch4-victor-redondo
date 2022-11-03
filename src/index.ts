@@ -1,8 +1,9 @@
 import express from "express";
 import morgan from "morgan";
-import things from "./data/things.js";
+
 import * as dotenv from "dotenv";
 import { endpointNotFound, generalError } from "./middlewares/errors.js";
+import getThings from "./controllers/getThings.js";
 
 const { log } = console;
 dotenv.config();
@@ -17,9 +18,7 @@ app.use(morgan("dev"));
 
 app.use(express.json());
 
-app.get("/things", (req, res) => {
-  res.status(200).json(things);
-});
+app.get("/things", getThings);
 
 app.use(endpointNotFound);
 

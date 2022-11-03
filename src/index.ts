@@ -19,7 +19,7 @@ const serverThings = app.listen(port, () => {
   log(serveListener);
 });
 
-app.get("/things", (req, res) => {
+app.get("/", (req, res) => {
   res.status(200).json(things);
 });
 

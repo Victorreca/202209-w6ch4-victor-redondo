@@ -3,6 +3,7 @@ import morgan from "morgan";
 import things from "./data/things.js";
 
 const app = express();
+const port = process.env.PORT;
 
 const serveListener = "Server listener";
 const error404 = "Error en el servidor";
@@ -15,7 +16,7 @@ app.get("/things", (req, res) => {
   res.status(200).json(things);
 });
 
-const serverThings = app.listen(4000, () => {
+const serverThings = app.listen(port, () => {
   const { log } = console;
   log(serveListener);
 });

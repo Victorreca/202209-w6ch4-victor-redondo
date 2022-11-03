@@ -1,4 +1,5 @@
 interface TypesThings {
+  id: number;
   thing: string;
 }
 

@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@types/morgan": "^1.9.3",
+    "dotenv": "^16.0.3",
     "morgan": "^1.10.0"
   }
 }
